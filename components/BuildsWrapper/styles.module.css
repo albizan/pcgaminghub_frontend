@@ -1,0 +1,8 @@
+.active {
+  background-color: #5a67d8;
+  color: white;
+}
+
+.input {
+  width: 26rem;
+}
