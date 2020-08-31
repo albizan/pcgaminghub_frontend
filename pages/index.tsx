@@ -6,7 +6,6 @@ import Container from "../layouts/Container";
 // Import components
 import FullpageLanding from "../components/FullpageLanding";
 import BuildsWrapper from "../components/BuildsWrapper";
-import BuildCard from "../components/BuildCard";
 
 export default function Home() {
   return (
@@ -28,11 +27,6 @@ export default function Home() {
           </p>
         </section>
         <BuildsWrapper />
-        <div className="flex flex-wrap">
-          <BuildCard />
-          <BuildCard />
-          <BuildCard />
-        </div>
       </Container>
     </>
   );
