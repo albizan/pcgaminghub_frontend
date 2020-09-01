@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import styles from "./styles.module.css";
 
 export default function BuildCard({ baseBuild }) {
@@ -39,9 +41,9 @@ export default function BuildCard({ baseBuild }) {
         </div>
 
         <div className="show-more-btn flex justify-center mt-12">
-          <button className={`${styles.lift} inline-block focus:outline-none bg-white px-8 py-3 uppercase font-semibold text-indigo-500 rounded-full`}>
-            Mostra Tutto {">"}
-          </button>
+          <Link href={`/build/${id}`}>
+            <a className={`${styles.lift} inline-block focus:outline-none bg-white px-8 py-3 uppercase font-semibold text-indigo-500 rounded-full`}>Mostra Tutto {">"}</a>
+          </Link>
         </div>
       </div>
     </div>
