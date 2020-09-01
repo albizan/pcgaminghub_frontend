@@ -71,10 +71,10 @@ export default function BuildsWrapper() {
 
   return (
     <div>
-      <div className="mt-12 bg-white shadow-xl mb-20 py-12 lg:px-20 py-8">
-        <div className="flex">
-          <div className="flex-1">
-            <p className="font-bold text-lg text-center tracking-wide mb-4">Seleziona o deseleziona il brand del processore</p>
+      <div className="mt-12 bg-white shadow-xl mb-20 py-12 px-4 lg:px-16 py-8">
+        <div className="flex flex-col lg:flex-row">
+          <div className="w-full lg:flex-1">
+            <p className="font-bold text-sm lg:text-lg text-center tracking-wide mb-4">Seleziona il brand del processore</p>
             <div className="flex justify-center">
               <button
                 onClick={toggleCPUAMD}
@@ -94,8 +94,8 @@ export default function BuildsWrapper() {
               </button>
             </div>
           </div>
-          <div className="flex-1">
-            <p className="font-bold text-lg text-right text-center tracking-wide mb-4">Seleziona o deseleziona il brand della scheda video</p>
+          <div className="w-full mt-10 lg:mt-0 lg:flex-1">
+            <p className="font-bold text-sm lg:text-lg text-center tracking-wide mb-4">Seleziona il brand della scheda video</p>
             <div className="flex justify-center">
               <button
                 onClick={toggleGPUAMD}
@@ -117,18 +117,18 @@ export default function BuildsWrapper() {
           </div>
         </div>
 
-        <div className="flex justify-around w-full mt-20">
+        <div className="flex flex-col lg:flex-row items-center justify-around w-full mt-12 lg:mt-20">
           <div className="flex flex-col">
             <span className="font-semibold mr-2">Prezzo minimo</span>
             <input
               value={minPrice}
               onChange={(e) => setMinPrice(parseInt(e.target.value))}
               type="number"
-              className={`px-4 py-3 rounded border border-gray-300 focus:outline-none ${styles.input}`}
+              className={`block px-4 py-3 rounded border border-gray-300 focus:outline-none ${styles.input}`}
             />
           </div>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col mt-10 lg:mt-0">
             <span className="font-semibold mr-2">Prezzo massimo</span>
             <input
               value={maxPrice}
