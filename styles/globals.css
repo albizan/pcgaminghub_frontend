@@ -13,3 +13,16 @@ body {
   background: rgb(95, 85, 233);
   background: linear-gradient(45deg, rgba(95, 85, 233, 1) 0%, rgba(95, 85, 233, 1) 40%, rgba(149, 71, 219, 1) 100%);
 }
+
+.lift {
+  -webkit-transition: box-shadow 0.4s ease, -webkit-transform 0.4s ease;
+  transition: box-shadow 0.4s ease, -webkit-transform 0.4s ease;
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  transition: box-shadow 0.4s ease, transform 0.4s ease, -webkit-transform 0.4s ease;
+}
+.lift:focus,
+.lift:hover {
+  box-shadow: 0rem 1rem 1rem rgba(3, 3, 3, 0.2);
+  -webkit-transform: translate3d(0, -3px, 0);
+  transform: translate3d(0, -2px, 0);
+}
