@@ -3,7 +3,6 @@ import Link from "next/link";
 import styles from "./styles.module.css";
 
 export default function BuildCard({ baseBuild }) {
-  console.info("CARD PROPS", baseBuild);
   const { id, name, price, date, cpuLabel, gpuLabel } = baseBuild;
   return (
     <div className="w-full md:w-1/2 md:px-1 lg:w-1/3 lg:px-2 my-6">
@@ -42,7 +41,7 @@ export default function BuildCard({ baseBuild }) {
 
         <div className="show-more-btn flex justify-center mt-12">
           <Link href={`/build/${id}`}>
-            <a className={`${styles.lift} inline-block focus:outline-none bg-white px-8 py-3 uppercase font-semibold text-indigo-500 rounded-full`}>Mostra Tutto {">"}</a>
+            <a className={`inline-block focus:outline-none bg-white px-8 py-3 uppercase font-semibold text-indigo-500 rounded-full`}>Mostra Tutto {">"}</a>
           </Link>
         </div>
       </div>
