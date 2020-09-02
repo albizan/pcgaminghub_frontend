@@ -2,14 +2,15 @@ import styles from "./styles.module.css";
 import { useState, useEffect } from "react";
 import { http } from "../../utils/http";
 import BuildCard from "../BuildCard";
+import { BaseBuild } from "../../interfaces/BaseBuild.interface";
 
 const AMD = "AMD";
-const INTEL = "Intel";
-const NVIDIA = "Nvidia";
+const INTEL = "INTEL";
+const NVIDIA = "NVIDIA";
 
 export default function BuildsWrapper() {
-  let [baseBuilds, setBaseBuilds] = useState([]);
-  let [filteredBuilds, setFilteredBuilds] = useState([]);
+  let [baseBuilds, setBaseBuilds] = useState<BaseBuild[]>([]);
+  let [filteredBuilds, setFilteredBuilds] = useState<BaseBuild[]>([]);
   let [cpus, setCpus] = useState([AMD, INTEL]);
   let [gpus, setGpus] = useState([AMD, NVIDIA]);
   let [minPrice, setMinPrice] = useState(600);
@@ -59,6 +60,7 @@ export default function BuildsWrapper() {
   useEffect(() => {
     async function retrieveBaseBuilds() {
       try {
+        console.info("Loading data");
         const { data } = await http.get("/build/base");
         setBaseBuilds(data);
         setFilteredBuilds(data);
@@ -68,6 +70,14 @@ export default function BuildsWrapper() {
     }
     retrieveBaseBuilds();
   }, []);
+
+  // Apply filter when CPU, GPU, price is changed by user
+  useEffect(() => {
+    const newFilteredBuilds = baseBuilds.filter((build) => {
+      return cpus.includes(build.cpuBrand) && gpus.includes(build.gpuBrand) && minPrice < build.price && build.price < maxPrice;
+    });
+    setFilteredBuilds(newFilteredBuilds);
+  }, [cpus, gpus, maxPrice, minPrice]);
 
   return (
     <div>
@@ -122,7 +132,7 @@ export default function BuildsWrapper() {
             <span className="font-semibold mr-2">Prezzo minimo</span>
             <input
               value={minPrice}
-              onChange={(e) => setMinPrice(parseInt(e.target.value))}
+              onChange={(e) => setMinPrice(parseInt(e.target.value || "0"))}
               type="number"
               className={`block px-4 py-3 rounded border border-gray-300 focus:outline-none ${styles.input}`}
             />
@@ -132,7 +142,7 @@ export default function BuildsWrapper() {
             <span className="font-semibold mr-2">Prezzo massimo</span>
             <input
               value={maxPrice}
-              onChange={(e) => setMaxPrice(parseInt(e.target.value))}
+              onChange={(e) => setMaxPrice(parseInt(e.target.value || "0"))}
               type="number"
               className={`px-4 py-3 rounded border border-gray-300 focus:outline-none ${styles.input}`}
             />
