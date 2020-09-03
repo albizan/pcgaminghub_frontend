@@ -1,7 +1,9 @@
 import { useForm } from "react-hook-form";
 import { http } from "../utils/http";
-import { saveAccessToken } from "../utils/auth";
-import { useState } from "react";
+import { saveAccessToken, isLoggedIn, getAccessToken } from "../utils/auth";
+import { setAuthCookie } from "../utils/cookie";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 type Inputs = {
   username: string;
@@ -9,16 +11,27 @@ type Inputs = {
 };
 
 export default function Login() {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (isLoggedIn()) {
+      setAuthCookie(getAccessToken());
+    }
+    router.push("/dashboard");
+  }, []);
+
   const { register, handleSubmit, errors } = useForm<Inputs>();
   const onSubmit = async (data) => {
     try {
       const result = await http.post("/user/login", data);
       const accessToken: string = result.data.accessToken || "";
       saveAccessToken(accessToken);
+      setAuthCookie(accessToken);
       setErrorMessage("");
       setsuccessMessage("Accesso autorizzato, dashboard in caricamento");
+      router.push("/dashboard");
     } catch (error) {
-      if (error.response.status === 401) {
+      if (error.response?.status === 401) {
         setErrorMessage("Credenziali invalide");
         setsuccessMessage("");
         return;
