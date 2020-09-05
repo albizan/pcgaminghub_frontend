@@ -2,7 +2,7 @@ import axios from "axios";
 
 const baseUrls = {
   development: "http://localhost:80/api",
-  production: "https://d7992fc2a2ea.ngrok.io/api",
+  production: "https://8d649e6ca716.ngrok.io/api",
 };
 
 export const http = axios.create({
