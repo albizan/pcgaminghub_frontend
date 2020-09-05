@@ -13,13 +13,6 @@ type Inputs = {
 export default function Login() {
   const router = useRouter();
 
-  useEffect(() => {
-    if (isLoggedIn()) {
-      setAuthCookie(getAccessToken());
-    }
-    router.push("/dashboard");
-  }, []);
-
   const { register, handleSubmit, errors } = useForm<Inputs>();
   const onSubmit = async (data) => {
     try {
