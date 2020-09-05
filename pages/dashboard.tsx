@@ -1,7 +1,7 @@
 import { NextPageContext } from "next";
 import { checkAuthCookie, removeAuthCookie } from "../utils/cookie";
 import { deleteAccessToken } from "../utils/auth";
-import { http } from "../utils/http";
+import { baseInstance, http } from "../utils/http";
 import Link from "next/link";
 import { BaseBuild } from "../interfaces/BaseBuild.interface";
 import { useState } from "react";
@@ -100,8 +100,7 @@ export async function getServerSideProps(context: NextPageContext) {
     context.res.end();
   }
   try {
-    console.info("Loading data");
-    const { data } = await http.get<BaseBuild[]>("/build/base");
+    const { data } = await baseInstance.get<BaseBuild[]>("/build/base");
     return {
       props: {
         accessToken,
@@ -109,6 +108,7 @@ export async function getServerSideProps(context: NextPageContext) {
       },
     };
   } catch (error) {
-    return;
+    console.log(error);
+    return {};
   }
 }
