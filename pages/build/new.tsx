@@ -1,8 +1,14 @@
 import { useForm } from "react-hook-form";
 import { http } from "../../utils/http";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { getAccessToken } from "../../utils/auth";
 
 export default function NewBuild() {
+  useEffect(() => {
+    const token = localStorage ? getAccessToken() : "";
+    if (!token) router.push("/login");
+  });
   const router = useRouter();
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = async (data) => {
