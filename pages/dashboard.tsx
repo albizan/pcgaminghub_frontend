@@ -1,16 +1,25 @@
 import { NextPageContext } from "next";
-import { checkAuthCookie } from "../utils/cookie";
+import { checkAuthCookie, removeAuthCookie } from "../utils/cookie";
+import { deleteAccessToken } from "../utils/auth";
 import { http } from "../utils/http";
 import Link from "next/link";
 import { BaseBuild } from "../interfaces/BaseBuild.interface";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Dashboard(props) {
   const [deleteCandidate, setDeleteCandidate] = useState<BaseBuild>(null);
   const [builds, setBuilds] = useState<BaseBuild[]>(props.baseBuilds);
+  const router = useRouter();
 
   function openDeleteModal(candidate: BaseBuild) {
     setDeleteCandidate(candidate);
+  }
+
+  function handleLogout() {
+    removeAuthCookie();
+    deleteAccessToken();
+    router.push("/");
   }
 
   async function handleDelete() {
@@ -23,10 +32,15 @@ export default function Dashboard(props) {
     } catch (error) {}
   }
   return (
-    <section className="mx-auto container">
+    <section className="mx-auto container mt-20">
       <div className="flex items-center">
         <h1 className="flex-1 text-3xl">Dashboard</h1>
-        <button className="px-3 py-2 rounded gradient text-white uppercase text-sm">Logout</button>
+        <button className="px-3 py-2 rounded bg-green-400 text-white uppercase text-sm mr-4" onClick={() => router.push("/build/new")}>
+          Nuova Build
+        </button>
+        <button className="px-3 py-2 rounded gradient text-white uppercase text-sm" onClick={handleLogout}>
+          Logout
+        </button>
       </div>
       {builds.length > 0 ? (
         <div className="builds">
