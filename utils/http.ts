@@ -3,7 +3,7 @@ import { getAccessToken } from "./auth";
 
 const baseUrls = {
   development: "http://localhost:80/api",
-  production: "https://8d649e6ca716.ngrok.io/api",
+  production: "https://api.pcgaming.fun/api",
 };
 
 const instance = axios.create({
