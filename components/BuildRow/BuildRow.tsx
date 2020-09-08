@@ -19,8 +19,9 @@ export default function BuildRow(props) {
           <a href={component.url}>Guarda su amazon.it</a>
         </span>
       </div>
-      <div>
-        <p className="text-sm md:text-xl font-semibold">{component.price ? `${component.price} €` : "N/A"}</p>
+      <div className="text-right">
+        <p className="text-sm md:text-lg font-semibold">{component.price ? `${component.price} €` : "N/A"}</p>
+        <p className="text-sm text-gray-500 tracking-tight leading-none">ultimo controllo: {component.time}</p>
       </div>
     </div>
   );
