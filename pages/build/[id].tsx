@@ -71,7 +71,7 @@ export default function BuildPage() {
             )}
           </div>
         </header>
-        <p className="mt-10 lg:mt-16 text-right text-xl lg:text-2xl font-semibold text-gray-700">Totale: {total.toFixed(2)} €</p>
+        <p className="mt-10 lg:mt-16 text-center md:text-right text-xl lg:text-2xl font-semibold text-gray-700">Totale: {total.toFixed(2)} €</p>
         {completeBuild.items.map((item) => (
           <BuildRow key={item.asin} component={item} />
         ))}
