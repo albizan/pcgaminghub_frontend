@@ -38,6 +38,7 @@ export default function BuildPage() {
   }
 
   if (completeBuild) {
+    const total = completeBuild.items.reduce((total, item) => (total += item.price), 0);
     return (
       <section className="container mx-auto px-4">
         <header className="py-12 flex items-center border-b border-gray-400">
@@ -45,27 +46,32 @@ export default function BuildPage() {
             <Link href="/">
               <a className="text-indigo-500 text-sm md:text-lg font-thin tracking-tight">{"< "}Torna alla home</a>
             </Link>
-            <h1 className="text-3xl lg:text-5xl font-thin mt-6">{completeBuild.name}</h1>
+            <h1 className="text-4xl lg:text-5xl font-thin mt-10">{completeBuild.name}</h1>
             <div>
-              <p className="text-gray-500 text-sm md:text-lg">Fascia di prezzo: {completeBuild.price} €</p>
-              <p className="text-gray-500 text-sm md:text-lg">Creazione configurazione: {completeBuild.date}</p>
-              <p className="text-gray-500 text-sm md:text-lg">{id}</p>
+              <p className="text-gray-500 text-xs md:text-lg">Fascia di prezzo: {completeBuild.price} €</p>
+              <p className="text-gray-500 text-xs md:text-lg">Creazione configurazione: {completeBuild.date}</p>
+              <p className="hidden md:block text-gray-500 text-xs md:text-lg">{id}</p>
             </div>
           </div>
           <div className="buttons flex flex-col md:flex-row text-gray-700 ">
             <div className="mr-4">
               <p className="font-black text-xs">Processore</p>
-              <button className="focus:outline-none inline-block px-6 py-2 border rounded gradient text-white uppercase text-2xl">{completeBuild.cpuBrand}</button>
+              <button className="focus:outline-none inline-block px-6 py-2 border rounded gradient text-white uppercase lg:text-2xl w-24 lg:w-32">
+                {completeBuild.cpuBrand}
+              </button>
             </div>
 
             {completeBuild.gpuBrand && (
               <div>
                 <p className="font-black text-xs">Scheda Video</p>
-                <button className="focus:outline-none inline-block px-6 py-2 border rounded gradient text-white uppercase text-2xl">{completeBuild.gpuBrand}</button>
+                <button className="focus:outline-none inline-block px-6 py-2 border rounded gradient text-white uppercase lg:text-2xl w-24 lg:w-32">
+                  {completeBuild.gpuBrand}
+                </button>
               </div>
             )}
           </div>
         </header>
+        <p className="mt-10 lg:mt-16 text-right text-xl lg:text-2xl font-semibold text-gray-700">Totale: {total.toFixed(2)} €</p>
         {completeBuild.items.map((item) => (
           <BuildRow key={item.asin} component={item} />
         ))}
