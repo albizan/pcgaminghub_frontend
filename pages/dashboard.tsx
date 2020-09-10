@@ -57,7 +57,9 @@ export default function Dashboard(props) {
                   <button onClick={() => openDeleteModal(baseBuild)} className="mr-2 bg-red-600 text-white rounded w-20 text-xs font-semibold">
                     Elimina
                   </button>
-                  <button className="mr-2 bg-yellow-500 text-gray-800 rounded w-20 text-xs font-semibold">Modifica</button>
+                  <button onClick={() => router.push(`/build/edit/${baseBuild.id}`)} className="mr-2 bg-yellow-500 text-gray-800 rounded w-20 text-xs font-semibold">
+                    Modifica
+                  </button>
                 </div>
               </div>
             );
