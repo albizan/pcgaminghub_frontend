@@ -31,14 +31,13 @@ export default function BuildPage() {
   if (!completeBuild) {
     return (
       <div className="flex flex-col w-full h-screen justify-center items-center">
-        <p className="text-center text-3xl tracking-wide">Stiamo analizzando la tua richiesta</p>
         <p className="text-center text-3xl tracking-wide">Caricamento in corso...</p>
       </div>
     );
   }
 
   if (completeBuild) {
-    const total = completeBuild.items.reduce((total, item) => (total += item.price), 0);
+    const total: number = completeBuild.items.reduce((total, item) => (total += item.price), 0);
     return (
       <section className="container mx-auto px-4">
         <header className="py-12 flex items-center border-b border-gray-400">
@@ -71,10 +70,23 @@ export default function BuildPage() {
             )}
           </div>
         </header>
+
         <p className="mt-10 lg:mt-16 text-center md:text-right text-xl lg:text-2xl font-semibold text-gray-700">Totale: {total.toFixed(2)} €</p>
         {completeBuild.items.map((item) => (
           <BuildRow key={item.asin} component={item} />
         ))}
+
+        <div className="text-gray-700 my-12">
+          <h3 className="text-3xl font-thin">Disclaimer</h3>
+          <p>
+            In qualità di affiliati Amazon, riceviamo una piccola percentuale su ogni acquisto effettuato tramite i link qui proposti. Questo non comporta nessun aumento
+            di prezzo per l'acquirente finale
+          </p>
+          <p>
+            Monitoriamo frequentemente tutti i prezzi dei prodotti qui mostrati, ciò nonostante vi esortiamo a controllare il prezzo direttamente sulla piattaforma
+            Amazon.it prima di procedere con il completamento dell'ordine
+          </p>
+        </div>
       </section>
     );
   }
