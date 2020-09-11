@@ -41,7 +41,7 @@ export default function Navbar({ landing }) {
                 className={classNames({ "hover:border-white": landing, "hover:border-indigo-600": !landing }, "inline-block border-b-2 border-transparent lg:ml-6")}
                 href="#"
               >
-                Configurazioni
+                Contatti
               </a>
             </li>
             <li>
@@ -49,7 +49,7 @@ export default function Navbar({ landing }) {
                 className={classNames({ "hover:border-white": landing, "hover:border-indigo-600": !landing }, "inline-block border-b-2 border-transparent lg:ml-6")}
                 href="#"
               >
-                Contatti
+                Offerte
               </a>
             </li>
           </ul>
