@@ -39,20 +39,20 @@ export default function BuildPage() {
   if (completeBuild) {
     const total: number = completeBuild.items.reduce((total, item) => (total += item.price), 0);
     return (
-      <section className="container mx-auto px-4">
-        <header className="py-12 flex items-center border-b border-gray-400">
-          <div className="flex-1 back name date">
-            <Link href="/">
-              <a className="text-indigo-500 text-sm md:text-lg font-thin tracking-tight">{"< "}Torna alla home</a>
-            </Link>
-            <h1 className="text-4xl lg:text-5xl font-thin mt-10">{completeBuild.name}</h1>
+      <section className="container mx-auto px-4 md:px-8">
+        <Link href="/">
+          <a className="mt-12 block text-indigo-500 text-sm md:text-lg font-thin tracking-tight">{"< "}Torna alla home</a>
+        </Link>
+        <header className="py-12 flex flex-col-reverse md:flex-row border-b border-gray-400">
+          <div className="flex-1 back name date mt-8 md:mt-0">
+            <h1 className="text-4xl lg:text-5xl font-thin">{completeBuild.name}</h1>
             <div>
-              <p className="text-gray-500 text-xs md:text-lg">Fascia di prezzo: {completeBuild.price} €</p>
-              <p className="text-gray-500 text-xs md:text-lg">Creazione configurazione: {completeBuild.date}</p>
-              <p className="hidden md:block text-gray-500 text-xs md:text-lg">{id}</p>
+              <p className="text-gray-500 text-xs sm:text-lg">Fascia di prezzo: {completeBuild.price} €</p>
+              <p className="text-gray-500 text-xs sm:text-lg">Creazione configurazione: {completeBuild.date}</p>
+              <p className="hidden sm:block text-gray-500 text-xs sm:text-lg">{id}</p>
             </div>
           </div>
-          <div className="buttons flex flex-col md:flex-row text-gray-700 ">
+          <div className="buttons flex text-gray-700 justify-center items-center">
             <div className="mr-4">
               <p className="font-black text-xs">Processore</p>
               <button className="focus:outline-none inline-block px-6 py-2 border rounded gradient text-white uppercase lg:text-2xl w-24 lg:w-32">
