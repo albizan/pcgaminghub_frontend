@@ -14,7 +14,14 @@ export default function BuildForm({ defaultValues, buildId }) {
   const { register, handleSubmit, errors } = useForm({ mode: "onBlur", defaultValues: defaultValues || {} });
   const onSubmit = async (data) => {
     try {
-      const result = await http.post("/build/new", data);
+      let result;
+      if (buildId) {
+        // Update build
+        result = await http.put(`/build/${buildId}`, data);
+      } else {
+        // Create new build
+        result = await http.post("/build/new", data);
+      }
       if (result.status) {
         router.push("/dashboard");
       }
