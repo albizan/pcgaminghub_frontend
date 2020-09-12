@@ -10,13 +10,13 @@ export default function Navbar({ landing }) {
   }
 
   return (
-    <header className="flex flex-wrap text-gray-700 lg:py-4">
+    <header className="flex flex-wrap text-gray-700 py-4 lg:py-8">
       <div className="flex-1 flex justify-between items-center">
         <a href="#" className={classNames({ "text-white": landing, "text-indigo-600": !landing }, "text-2xl font-semibold tracking-tight")}>
           PC Gaming Hub
         </a>
         <span onClick={toggleNav} className="cursor-pointer lg:hidden block">
-          <svg className="fill-current text-gray-800" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+          <svg className="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
             <title>menu</title>
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
           </svg>
@@ -26,17 +26,20 @@ export default function Navbar({ landing }) {
         className={classNames({ hidden: !isOpen, block: isOpen, "text-white": landing, "text-indigo-600": !landing }, "lg:flex lg:items-center lg:w-auto w-full")}
         id="menu"
       >
-        <nav className="text-right text-lg lg:text-left">
+        <nav className="text-right text-2xl lg:text-lg lg:text-left">
           <ul className="lg:flex items-center justify-between lg:pt-0">
-            <li>
+            <li className="border-2 border-white p-3 rounded-lg lg:border-0 lg:p-0 my-3 lg:my-0">
               <a
-                className={classNames({ "hover:border-white": landing, "hover:border-indigo-600": !landing }, "inline-block border-b-2 border-transparent lg:ml-6")}
+                className={classNames(
+                  { "hover:border-white": landing, "hover:border-indigo-600": !landing },
+                  "lg:mt-0 inline-block border-b-2 border-transparent lg:ml-6",
+                )}
                 href="#"
               >
                 Chi Siamo
               </a>
             </li>
-            <li>
+            <li className="border-2 border-white p-3 rounded-lg lg:border-0 lg:p-0 my-3 lg:my-0">
               <a
                 className={classNames({ "hover:border-white": landing, "hover:border-indigo-600": !landing }, "inline-block border-b-2 border-transparent lg:ml-6")}
                 href="#"
@@ -44,7 +47,7 @@ export default function Navbar({ landing }) {
                 Contatti
               </a>
             </li>
-            <li>
+            <li className="border-2 border-white p-3 rounded-lg lg:border-0 lg:p-0 my-3 lg:my-0">
               <a
                 className={classNames({ "hover:border-white": landing, "hover:border-indigo-600": !landing }, "inline-block border-b-2 border-transparent lg:ml-6")}
                 href="#"
