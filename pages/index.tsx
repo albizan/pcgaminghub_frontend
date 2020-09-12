@@ -16,14 +16,20 @@ export default function Home() {
       </Head>
       <FullpageLanding />
       <Container>
-        <section>
-          <h3 className="text-center text-4xl mt-12">Che metto qua?</h3>
-          <p className="text-xl mt-12">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim recusandae laborum possimus distinctio provident? Vero, accusamus praesentium odio consequatur
-            accusantium eveniet debitis nobis, asperiores porro modi labore totam dignissimos quia! Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
-            praesentium a facilis voluptatum reprehenderit inventore veniam suscipit ipsa repellendus ex quasi omnis aliquam dolorem provident? Aperiam nihil voluptatem
-            accusantium. Id. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit totam voluptates illum aut nesciunt eos eum cupiditate porro dolor possimus
-            facilis, vel eveniet a reiciendis aperiam rerum, nam hic quidem?
+        <section className="text-lg md:text-xl">
+          <h3 className="text-4xl mt-12 mb-6">Benvenuto Gamer!</h3>
+          <p>Questo sito nasce per rendere meno impervia la strada che ti separa dal tuo prossimo PC da Gaming.</p>
+          <p>
+            Sappiamo bene che districarsi tra una miriade di componenti è un'impresa ardua, per questo motivo abbiamo pensato di agevolarti nella scelta andando a
+            selezionare per te la migliore configurazione per ogni possibile fascia di prezzo.
+          </p>
+          <p>
+            Il nostro team ha maturato una notevola esperienza nel settore dell'hardware e delle componenti informatiche per desktop, il PC Gaming è la nostra passione e
+            vogliamo che diventi la passione di migliaia di altre persone.
+          </p>
+          <p>
+            La scelta delle componenti non è una questione banale, una buona configurazione ha bisogno di equilibrio ed è per questo che valutiamo attentamente la qualità
+            di tutte le componenti che compongono le nostre build.
           </p>
         </section>
         <BuildsWrapper />
