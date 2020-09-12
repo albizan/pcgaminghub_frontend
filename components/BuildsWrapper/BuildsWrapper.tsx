@@ -81,6 +81,18 @@ export default function BuildsWrapper() {
 
   return (
     <div>
+      <section className="text-lg md:text-xl">
+        <h3 className="text-4xl mt-12 mb-6">Le nostre configurazioni</h3>
+        <p className="text-xl">
+          Qui sotto troverai tutte le nostre configurazioni, abbiamo deciso di non pubblicare nessuna build al di sotto dei 600€ in quanto riteniamo questa soglia il
+          minimo sindacale per un buon computer da gaming.
+        </p>
+        <p>
+          Potrai trovare sicuramente la configurazione adatta a te, per agevolarti nell'impresa puoi filtrare le build in base ai tuoi brand preferiti e alla fascia di
+          prezzo individuata.
+        </p>
+        <p>Inizialmente tutti i brand sono selezionati e attivi, clicca sul pulsante per rimuove il brand che non ti interessa, buona ricerca!</p>
+      </section>
       <div className="mt-12 bg-white shadow-xl mb-20 py-12 px-4 lg:px-16 py-8">
         <div className="flex flex-col lg:flex-row">
           <div className="w-full lg:flex-1">
