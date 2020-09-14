@@ -1,15 +1,17 @@
 import Link from "next/link";
+import { BaseBuild } from "../../interfaces/BaseBuild.interface";
 
 import styles from "./styles.module.css";
 
-export default function BuildCard({ baseBuild }) {
-  const { id, name, price, date, cpuLabel, gpuLabel } = baseBuild;
+export default function BuildCard(props) {
+  const baseBuild: BaseBuild = props.baseBuild;
+  const { id, name, price, subTitle, imageUrl, cpuLabel, gpuLabel } = baseBuild;
   return (
     <div className="w-full md:w-1/2 md:px-1 lg:w-1/3 lg:px-2 my-6">
       <div className={`rounded-lg p-10 bg-indigo-400 text-white ${styles.lift} ${styles.cardBackground}`}>
         <div className="header flex">
           <div className="image w-24 h-24 rounded-lg overflow-hidden border-4 border-gray-200">
-            <img className="object-cover w-full h-full" src="https://i.ytimg.com/vi/DDhmv2uX2Rs/maxresdefault.jpg" alt="small pic of pc" />
+            <img className="object-cover w-full h-full" src={imageUrl} alt="small pic of pc" />
           </div>
           <div className="title price flex-1 ml-6 flex flex-col justify-center">
             <p className="text-xl lg:text-3xl">{name}</p>
@@ -20,7 +22,7 @@ export default function BuildCard({ baseBuild }) {
           </div>
         </div>
         <div className="overview mt-12 tracking-wide font-semibold">
-          <p className="mb-8">Configurazione da gaming leggero</p>
+          <p className="mb-8 h-16">{subTitle || "Configurazione base"}</p>
           <div className="cpu flex flex-row items-center py-4">
             <div className="w-10 border-2 rounded-lg p-2">
               <img src="/cpu.svg" alt="CPU Logo" className="logo" />
