@@ -60,7 +60,6 @@ export default function BuildsWrapper() {
   useEffect(() => {
     async function retrieveBaseBuilds() {
       try {
-        console.info("Loading data");
         const { data } = await http.get("/build/base");
         setBaseBuilds(data);
         setFilteredBuilds(data);
@@ -81,9 +80,9 @@ export default function BuildsWrapper() {
 
   return (
     <div>
-      <section className="text-lg md:text-xl">
+      <section className="text-sm md:text-lg">
         <h3 className="text-4xl mt-12 mb-6">Le nostre configurazioni</h3>
-        <p className="text-xl">
+        <p>
           Qui sotto troverai tutte le nostre configurazioni, abbiamo deciso di non pubblicare nessuna build al di sotto dei 600€ in quanto riteniamo questa soglia il
           minimo sindacale per un buon computer da gaming.
         </p>
