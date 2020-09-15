@@ -3,15 +3,13 @@ import BuildForm from "../../../components/BuildForm";
 import { useEffect, useState } from "react";
 import { http } from "../../../utils/http";
 import { CompleteBuild } from "../../../interfaces/CompleteBuild.interface";
+import DefaultValues from "../../../components/BuildForm/DefaultValues";
 
 function composeDefaultValues(completeBuild: CompleteBuild): DefaultValues {
   const defaultValues = new DefaultValues();
   completeBuild.items.forEach((item) => {
     if (item.type) {
-      defaultValues[item.type] = {
-        asin: item.asin,
-        label: item.label,
-      };
+      defaultValues.setComponent(item.type, { asin: item.asin, label: item.label });
     }
   });
   // Ignore items key
@@ -61,50 +59,4 @@ export default function EditBuild() {
       </div>
     );
   }
-}
-
-class DefaultValues {
-  name: string;
-  price: string;
-  description: string;
-  cpuBrand: string;
-  gpuBrand: string;
-  CPU: {
-    asin: string;
-    label: string;
-  };
-  GPU: {
-    asin: string;
-    label: string;
-  };
-  SSD?: {
-    asin: string;
-    label: string;
-  };
-  HDD?: {
-    asin: string;
-    label: string;
-  };
-  Alimentatore: {
-    asin: string;
-    label: string;
-  };
-  Case: {
-    asin: string;
-    label: string;
-  };
-  RAM: {
-    asin: string;
-    label: string;
-  };
-  Dissipatore?: {
-    asin: string;
-    label: string;
-  };
-  "Scheda Madre": {
-    asin: string;
-    label: string;
-  };
-
-  constructor() {}
 }
