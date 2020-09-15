@@ -14,11 +14,11 @@ function composeDefaultValues(completeBuild: CompleteBuild): DefaultValues {
       };
     }
   });
-  defaultValues["name"] = completeBuild.name;
-  defaultValues["price"] = completeBuild.price.toString();
-  defaultValues["description"] = completeBuild.description;
-  defaultValues["cpuBrand"] = completeBuild.cpuBrand;
-  defaultValues["gpuBrand"] = completeBuild.gpuBrand;
+  // Ignore items key
+  let keys = Object.keys(completeBuild).filter((key) => key !== "items");
+  keys.forEach((key) => {
+    defaultValues[key] = completeBuild[key];
+  });
 
   return defaultValues;
 }
