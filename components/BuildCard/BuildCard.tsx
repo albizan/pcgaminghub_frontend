@@ -5,10 +5,14 @@ import styles from "./styles.module.css";
 
 export default function BuildCard(props) {
   const baseBuild: BaseBuild = props.baseBuild;
-  const { id, name, price, subTitle, imageUrl, cpuLabel, gpuLabel } = baseBuild;
+  const { id, name, price, subTitle, imageUrl, cpuLabel, gpuLabel, cpuBrand, gpuBrand } = baseBuild;
   return (
     <div className="w-full md:w-1/2 md:px-1 lg:w-1/3 lg:px-2 my-6">
-      <div className={`rounded-lg p-10 bg-indigo-400 text-white ${styles.lift} ${styles.cardBackground}`}>
+      <div className={`rounded-lg p-8 bg-indigo-400 text-white ${styles.lift} ${styles.cardBackground}`}>
+        <div className="badges flex justify-end mb-4 text-xs uppercase text-indigo-600 font-black">
+          <span className="rounded-full px-3 py-1 bg-white  mr-2">{cpuBrand}</span>
+          <span className="rounded-full px-3 py-1 bg-white">{cpuBrand}</span>
+        </div>
         <div className="header flex">
           <div className="image w-24 h-24 rounded-lg overflow-hidden border-4 border-gray-200">
             <img className="object-cover w-full h-full" src={imageUrl} alt="small pic of pc" />
