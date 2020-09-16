@@ -17,7 +17,7 @@ export default function BuildPage() {
   useEffect(() => {
     async function getCompleteBuild() {
       try {
-        const { data } = await http.get(`/build/${id}`);
+        const { data }: { data: CompleteBuild } = await http.get(`/build/${id}`);
         setCompleteBuild(data);
       } catch (error) {
         console.log(error);
@@ -76,8 +76,15 @@ export default function BuildPage() {
           <BuildRow key={item.asin} component={item} />
         ))}
 
-        <div className="text-gray-700 my-12">
-          <h3 className="text-3xl font-thin">Disclaimer</h3>
+        {completeBuild.description && (
+          <div className="text-gray-800 my-12 md:text-lg leading-relaxed">
+            <h3 className="text-3xl font-semibold">Descrizione</h3>
+            <p>{completeBuild.description}</p>
+          </div>
+        )}
+
+        <div className="text-gray-800 my-12 md:text-lg leading-relaxed">
+          <h3 className="text-3xl font-semibold">Disclaimer</h3>
           <p>
             In qualità di affiliati Amazon, riceviamo una piccola percentuale su ogni acquisto effettuato tramite i link qui proposti. Questo non comporta nessun aumento
             di prezzo per l'acquirente finale
