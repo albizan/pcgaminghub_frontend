@@ -73,7 +73,7 @@ export default function BuildsWrapper() {
   // Apply filter when CPU, GPU, price is changed by user
   useEffect(() => {
     const newFilteredBuilds = baseBuilds.filter((build) => {
-      return cpus.includes(build.cpuBrand) && gpus.includes(build.gpuBrand) && minPrice < build.price && build.price < maxPrice;
+      return cpus.includes(build.cpuBrand) && gpus.includes(build.gpuBrand) && minPrice <= build.price && build.price <= maxPrice;
     });
     setFilteredBuilds(newFilteredBuilds);
   }, [cpus, gpus, maxPrice, minPrice]);
@@ -145,6 +145,8 @@ export default function BuildsWrapper() {
               value={minPrice}
               onChange={(e) => setMinPrice(parseInt(e.target.value || "0"))}
               type="number"
+              step="50"
+              min="600"
               className={`block px-4 py-3 rounded border border-gray-300 focus:outline-none ${styles.input}`}
             />
           </div>
@@ -155,6 +157,8 @@ export default function BuildsWrapper() {
               value={maxPrice}
               onChange={(e) => setMaxPrice(parseInt(e.target.value || "0"))}
               type="number"
+              step="50"
+              min="650"
               className={`px-4 py-3 rounded border border-gray-300 focus:outline-none ${styles.input}`}
             />
           </div>
