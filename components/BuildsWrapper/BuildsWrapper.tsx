@@ -164,7 +164,7 @@ export default function BuildsWrapper() {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap">
+      <div id="builds" className="flex flex-wrap">
         {filteredBuilds.map((baseBuild) => (
           <BuildCard key={baseBuild.id} baseBuild={baseBuild} />
         ))}
