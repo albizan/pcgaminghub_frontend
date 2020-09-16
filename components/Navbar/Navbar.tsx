@@ -10,7 +10,7 @@ export default function Navbar({ landing }) {
   }
 
   return (
-    <header className="flex flex-wrap text-gray-700 py-4 lg:py-8">
+    <header className="flex flex-wrap text-gray-700 py-4 lg:py-8 select-none">
       <div className="flex-1 flex justify-between items-center">
         <a href="#" className={classNames({ "text-white": landing, "text-indigo-600": !landing }, "text-2xl font-semibold tracking-tight")}>
           PC Gaming Hub
@@ -26,7 +26,7 @@ export default function Navbar({ landing }) {
         className={classNames({ hidden: !isOpen, block: isOpen, "text-white": landing, "text-indigo-600": !landing }, "lg:flex lg:items-center lg:w-auto w-full")}
         id="menu"
       >
-        <nav className="text-right text-2xl lg:text-lg lg:text-left">
+        <nav className="text-right text-lg lg:text-xl lg:text-left">
           <ul className="lg:flex items-center justify-between lg:pt-0">
             <li className="border-2 border-white p-3 rounded-lg lg:border-0 lg:p-0 my-3 lg:my-0">
               <a
@@ -53,6 +53,18 @@ export default function Navbar({ landing }) {
                 href="#"
               >
                 Offerte
+              </a>
+            </li>
+            <li className="lg:border-0 lg:p-0 my-3 lg:my-0">
+              <a
+                className={classNames(
+                  { "hover:border-white": landing, "hover:border-indigo-600": !landing },
+                  "inline-block bg-gray-100 text-indigo-600 lg:ml-6 rounded-lg px-3 py-2",
+                )}
+                target="_blank"
+                href="https://t.me/pcbuildingitaly"
+              >
+                Telegram
               </a>
             </li>
           </ul>
