@@ -14,9 +14,12 @@ export default function FullpageLanding() {
           <h1 className="block text-3xl md:text-4xl lg:text-5xl font-semibold tracking-wide">PC Gaming Hub</h1>
           <h2 className="tracking-tight md:text-lg font-thin">Scegliamo per te le migliori configurazioni per ogni fascia di prezzo</h2>
           <div>
-            <button className="text-xs md:text-lg mt-12 border-2 rounded px-5 py-3 uppercase font-semibold tracking-wide border-white hover:bg-white hover:text-indigo-600 focus:outline-none">
-              Entra
-            </button>
+            <a
+              href="#builds"
+              className="inline-block text-xs md:text-lg mt-12 border-2 rounded cursor-pointer px-6 py-3 uppercase font-semibold tracking-wide border-white hover:bg-white hover:text-indigo-600 focus:outline-none"
+            >
+              Mostra tutto
+            </a>
           </div>
         </div>
         <div className="absolute top-0 w-full">
