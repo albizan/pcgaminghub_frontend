@@ -3,7 +3,7 @@ import { Item } from "../../interfaces/Item.interface";
 export default function BuildRow(props) {
   let component: Item = props.component;
   return (
-    <div className="text-gray-700 text-xs sm:text-sm md:text-lg bg-white rounded border border-gray-400 shadow-lg flex my-6 py-6 items-center px-6 h-24 lg:h-32">
+    <div className="text-gray-700 text-xs sm:text-sm md:text-lg bg-white rounded border border-gray-400 shadow-lg flex my-6 py-6 items-center pl-6 sm:pl-0 pr-6 h-24 lg:h-32">
       <div className="hidden sm:block mr-6 photo w-24 overflow-hidden">
         <img
           className="object-cover w-full p-2"
@@ -11,8 +11,8 @@ export default function BuildRow(props) {
           alt="figure of the component from amazon website"
         />
       </div>
-      <div className="hidden md:block flex-1">
-        <p className="text-sm md:text-xl font-semibold">{component.type}</p>
+      <div className="hidden md:block w-32">
+        <p className="text-sm font-semibold">{component.type}</p>
       </div>
       <div className="mr-2 flex-1 truncate">
         <p className="text-sm md:text-xl font-semibold truncate">
