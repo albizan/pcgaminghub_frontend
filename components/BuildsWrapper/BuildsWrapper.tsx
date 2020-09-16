@@ -164,6 +164,14 @@ export default function BuildsWrapper() {
           </div>
         </div>
       </div>
+      <div>
+        <p className="text-sm md:text-lg">
+          Per qualunque dubbio, curiosità o semplicemente perchè ti piace parlare di componenti hardware sappi che sei benvenuto nel gruppo telegram{" "}
+          <a className="text-normal md:text-xl text-indigo-500 font-black border-b-2 border-indigo-500" href="https://t.me/pcbuildingitaly" target="_blank">
+            PC Building Italia
+          </a>
+        </p>
+      </div>
       <div id="builds" className="flex flex-wrap">
         {filteredBuilds.map((baseBuild) => (
           <BuildCard key={baseBuild.id} baseBuild={baseBuild} />
