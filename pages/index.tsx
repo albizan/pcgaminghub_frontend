@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>PC Gaming Hub</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <FullpageLanding />
