@@ -81,7 +81,7 @@ export default function BuildsWrapper() {
   return (
     <div>
       <section className="text-sm md:text-lg">
-        <h3 className="text-4xl mt-12 mb-6">Le nostre configurazioni</h3>
+        <h3 className="mt-12 mb-4 inline-block text-3xl font-semibold border-b-4 border-indigo-500 leading-tight">Le nostre configurazioni</h3>
         <p>
           Qui sotto troverai tutte le nostre configurazioni, abbiamo deciso di non pubblicare nessuna build al di sotto dei 600€ in quanto riteniamo questa soglia il
           minimo sindacale per un buon computer da gaming.

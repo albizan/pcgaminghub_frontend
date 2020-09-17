@@ -17,7 +17,7 @@ export default function Home() {
       <FullpageLanding />
       <Container>
         <section className="text-sm md:text-lg">
-          <h3 className="text-4xl mt-12 mb-6">Benvenuto Gamer!</h3>
+          <h3 className="mt-12 mb-4 inline-block text-3xl font-semibold border-b-4 border-indigo-500 leading-tight">Benvenuto Gamer!</h3>
           <p>Questo sito nasce per rendere meno impervia la strada che ti separa dal tuo prossimo PC da Gaming.</p>
           <p>
             Sappiamo bene che districarsi tra una miriade di componenti è un'impresa ardua, per questo motivo abbiamo pensato di agevolarti nella scelta andando a
