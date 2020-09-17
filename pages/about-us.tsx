@@ -12,11 +12,13 @@ export default function AboutUs() {
       </Head>
       <Container>
         <Navbar landing={false} />
-        <section className="md:text-xl">
+        <section>
           <div className="flex justify-center">
             <h1 className="mt-12 mb-4 inline-block text-5xl border-b-4 border-indigo-500 leading-tight text-center">Chi Siamo</h1>
           </div>
-          <p className="text-gray-700 text-center">PC Gaming Hub nasce dall’idea di voler rendere semplice e alla portata di tutti l’assemblaggio di un computer.</p>
+          <p className="text-gray-700 text-center md:text-xl">
+            PC Gaming Hub nasce dall’idea di voler rendere semplice e alla portata di tutti l’assemblaggio di un computer.
+          </p>
 
           <div className="flex justify-center">
             <div style={{ height: "1px" }} className="w-2/3 my-16 md:my-32 bg-gray-400"></div>

@@ -80,17 +80,22 @@ export default function BuildsWrapper() {
 
   return (
     <div>
-      <section className="text-sm md:text-lg">
-        <h3 className="mt-12 mb-4 inline-block text-3xl font-semibold border-b-4 border-indigo-500 leading-tight">Le nostre configurazioni</h3>
-        <p>
-          Qui sotto troverai tutte le nostre configurazioni, abbiamo deciso di non pubblicare nessuna build al di sotto dei 600€ in quanto riteniamo questa soglia il
-          minimo sindacale per un buon computer da gaming.
-        </p>
-        <p>
-          Potrai trovare sicuramente la configurazione adatta a te, per agevolarti nell'impresa puoi filtrare le build in base ai tuoi brand preferiti e alla fascia di
-          prezzo individuata.
-        </p>
-        <p>Inizialmente tutti i brand sono selezionati e attivi, clicca sul pulsante per rimuove il brand che non ti interessa, buona ricerca!</p>
+      <section className="text-sm md:text-lg mt-6 md:mt-12 text-center md:text-left">
+        <div className="flex justify-center">
+          <h1 className="mt-12 mb-4 inline-block text-5xl border-b-4 border-indigo-500 leading-tight text-center">Le nostre configurazioni</h1>
+        </div>
+        <div className="text-gray-700 md:text-xl">
+          <p>
+            Potrai trovare sicuramente la configurazione adatta a te, per agevolarti nell'impresa puoi filtrare le build in base ai tuoi brand preferiti e alla fascia di
+            prezzo individuata. Buona ricerca!
+          </p>
+          <p>
+            Per qualunque dubbio, curiosità o semplicemente perchè ti piace parlare di componenti hardware sappi che sei benvenuto nel gruppo telegram{" "}
+            <a className="text-indigo-600 font-semibold" href="https://t.me/pcbuildingitaly" target="_blank">
+              PC Building Italia
+            </a>
+          </p>
+        </div>
       </section>
       <div className="mt-12 bg-white shadow-xl mb-20 py-12 px-4 lg:px-16 py-8">
         <div className="flex flex-col lg:flex-row">
@@ -163,14 +168,6 @@ export default function BuildsWrapper() {
             />
           </div>
         </div>
-      </div>
-      <div>
-        <p className="text-sm md:text-lg">
-          Per qualunque dubbio, curiosità o semplicemente perchè ti piace parlare di componenti hardware sappi che sei benvenuto nel gruppo telegram{" "}
-          <a className="text-normal md:text-xl text-indigo-500 font-black border-b-2 border-indigo-500" href="https://t.me/pcbuildingitaly" target="_blank">
-            PC Building Italia
-          </a>
-        </p>
       </div>
       <div id="builds" className="flex flex-wrap">
         {filteredBuilds.map((baseBuild) => (
