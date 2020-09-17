@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
-
 import { http } from "../../utils/http";
+import { createCartUrl } from "../../utils/amazon";
 import { useEffect, useState } from "react";
 import { CompleteBuild } from "../../interfaces/CompleteBuild.interface";
 import Link from "next/link";
@@ -49,7 +49,6 @@ export default function BuildPage() {
             <div>
               <p className="text-gray-600 text-xs sm:text-lg">Fascia di prezzo: {completeBuild.price} €</p>
               <p className="text-gray-600 text-xs sm:text-lg">Creazione configurazione: {completeBuild.date}</p>
-              <p className="hidden sm:block text-gray-500 text-xs sm:text-lg">{id}</p>
             </div>
           </div>
           <div className="buttons flex text-gray-700 justify-center items-center">
@@ -71,20 +70,38 @@ export default function BuildPage() {
           </div>
         </header>
 
-        <p className="mt-10 lg:mt-16 text-center md:text-right text-2xl md:text-3xl font-semibold text-gray-700">Totale: {total.toFixed(2)} €</p>
+        <div className="flex lg:mt-16 text-xl md:text-2xl font-semibold text-gray-800">
+          <p className="flex-1 text-left text-indigo-600">
+            <a target="_blank" href={createCartUrl(completeBuild, "wasabe-21")}>
+              Aggiungi tutto al Carrello Amazon
+            </a>
+          </p>
+          <p className="flex-1 text-right">Totale: {total.toFixed(2)} €</p>
+        </div>
+
         {completeBuild.items.map((item) => (
           <BuildRow key={item.asin} component={item} />
         ))}
 
+        <div className="text-gray-900 my-12 md:text-lg leading-relaxed">
+          <h3 className="mb-4 inline-block text-3xl font-semibold border-b-4 border-indigo-500 leading-tight">Non sai assemblare?</h3>
+          <p>
+            Se hai problemi o non sai come assemblare un computer puoi rivolgerti a Luigi e Lorenzo di{" "}
+            <a className="text-indigo-500" href="#">
+              LL-Tech
+            </a>
+          </p>
+        </div>
+
         {completeBuild.description && (
-          <div className="text-gray-800 my-12 md:text-lg leading-relaxed">
-            <h3 className="text-3xl font-semibold">Descrizione</h3>
+          <div className="text-gray-900 my-12 md:text-lg leading-relaxed">
+            <h3 className="mb-4 inline-block text-3xl font-semibold border-b-4 border-indigo-500 leading-tight">Descrizione</h3>
             <p>{completeBuild.description}</p>
           </div>
         )}
 
-        <div className="text-gray-800 my-12 md:text-lg leading-relaxed">
-          <h3 className="text-3xl font-semibold">Disclaimer</h3>
+        <div className="text-gray-900 my-12 md:text-lg leading-relaxed">
+          <h3 className="mb-4 inline-block text-3xl font-semibold border-b-4 border-indigo-500 leading-tight">Disclaimer</h3>
           <p>
             In qualità di affiliati Amazon, riceviamo una piccola percentuale su ogni acquisto effettuato tramite i link qui proposti. Questo non comporta nessun aumento
             di prezzo per l'acquirente finale
