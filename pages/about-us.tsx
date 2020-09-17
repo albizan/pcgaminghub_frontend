@@ -1,6 +1,4 @@
 import Head from "next/head";
-import { IconContext } from "react-icons";
-import { FaTelegram } from "react-icons/fa";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Container from "../layouts/Container";
@@ -21,7 +19,7 @@ export default function AboutUs() {
           <p className="text-gray-700 text-center">PC Gaming Hub nasce dall’idea di voler rendere semplice e alla portata di tutti l’assemblaggio di un computer.</p>
 
           <div className="flex justify-center">
-            <div style={{ height: "1px" }} className="w-2/3 my-32 bg-gray-400"></div>
+            <div style={{ height: "1px" }} className="w-2/3 my-16 md:my-32 bg-gray-400"></div>
           </div>
 
           <div className="flex flex-col md:flex-row">
@@ -44,7 +42,7 @@ export default function AboutUs() {
           </div>
 
           <div className="flex justify-center">
-            <div style={{ height: "1px" }} className="w-2/3 my-32 bg-gray-400"></div>
+            <div style={{ height: "1px" }} className="w-2/3 my-16 md:my-32 bg-gray-400"></div>
           </div>
 
           <div className="flex flex-wrap">
@@ -71,7 +69,7 @@ export default function AboutUs() {
                 <img src="/c.jpg" alt="Avatar of admin" className="mb-6 rounded-full h-24 w-24" />
                 <div className="px-4 text-center">
                   <p className="text-gray-700">Project Manager</p>
-                  <p className="text-gray-900 text-3xl mb-4">Blackrabbit</p>
+                  <p className="text-gray-900 text-3xl mb-4">Cesco 2161</p>
                 </div>
               </div>
             </div>
