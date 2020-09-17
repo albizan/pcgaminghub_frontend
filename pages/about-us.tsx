@@ -37,8 +37,8 @@ export default function AboutUs() {
               </p>
               <p className="mt-4">
                 La maggior parte delle persone vorrebbe un computer in grado di svolgere una precisa mansione, ma non sa quali siano le parti hardware necessarie per
-                svolgere il compito e, per evitare di fare un acquisto sbagliato, scelgono di affidarsi ai negozi. Questo sito ha l’obiettivo di rompere la barriera che
-                si sovrappone tra l’utente e la scelta giusta dei componenti.
+                svolgere il compito e per evitare di fare un acquisto sbagliato sceglie di affidarsi alle configurazioni preconfezionate dei negozi. Questo sito ha
+                l’obiettivo di rompere la barriera che separa l’utente dalla scelta giusta dei componenti.
               </p>
             </div>
           </div>
