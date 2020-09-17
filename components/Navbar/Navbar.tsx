@@ -42,14 +42,6 @@ export default function Navbar({ landing }) {
             <li className="border-2 border-white p-3 rounded-lg lg:border-0 lg:p-0 my-3 lg:my-0">
               <a
                 className={classNames({ "hover:border-white": landing, "hover:border-indigo-600": !landing }, "inline-block border-b-2 border-transparent lg:ml-6")}
-                href="#"
-              >
-                Contatti
-              </a>
-            </li>
-            <li className="border-2 border-white p-3 rounded-lg lg:border-0 lg:p-0 my-3 lg:my-0">
-              <a
-                className={classNames({ "hover:border-white": landing, "hover:border-indigo-600": !landing }, "inline-block border-b-2 border-transparent lg:ml-6")}
                 href="https://t.me/offertecomponenti"
               >
                 Offerte
