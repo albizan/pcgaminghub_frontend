@@ -8,7 +8,7 @@ import MouseScroll from "../MouseScroll";
 
 export default function FullpageLanding() {
   return (
-    <div className={classNames(styles.background, "h-screen w-full relative bg-red-400")}>
+    <div className={classNames(styles.background, "h-screen w-full relative")}>
       <div className="absolute inset-0 flex items-center justify-center text-center">
         <div className="mt-12 p-8 text-white text-xl font-thin tracking-wide border-white">
           <h1 className="block text-3xl md:text-4xl lg:text-5xl font-semibold tracking-wide">PC Gaming Hub</h1>
