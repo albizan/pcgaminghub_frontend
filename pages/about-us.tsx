@@ -1,4 +1,6 @@
 import Head from "next/head";
+import { IconContext } from "react-icons";
+import { FaTelegram } from "react-icons/fa";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Container from "../layouts/Container";
@@ -43,6 +45,36 @@ export default function AboutUs() {
 
           <div className="flex justify-center">
             <div style={{ height: "1px" }} className="w-2/3 my-32 bg-gray-400"></div>
+          </div>
+
+          <div className="flex flex-wrap">
+            <div className="w-full md:w-1/2 lg:w-1/3 px-2 my-2">
+              <div className="w-full border border-gray-300 rounded h-full flex flex-col items-center justify-center py-8 bg-white shadow-xl lift">
+                <img src="https://placekitten.com/360/360" alt="Avatar of admin" className="mb-6 rounded-full h-24 w-24" />
+                <div className="px-4 text-center">
+                  <p className="text-gray-700">Founder/CEO</p>
+                  <p className="text-gray-900 text-3xl mb-4">Blackrabbit</p>
+                </div>
+              </div>
+            </div>
+            <div className="w-full md:w-1/2 lg:w-1/3 px-2 my-2">
+              <div className="w-full border border-gray-300 rounded h-full flex flex-col items-center justify-center py-8 bg-white shadow-xl lift">
+                <img src="/aw.jpg" alt="Avatar of admin" className="mb-6 rounded-full h-24 w-24" />
+                <div className="px-4 text-center">
+                  <p className="text-gray-700">Founder/Developer</p>
+                  <p className="text-gray-900 text-3xl mb-4">Angry Weasel</p>
+                </div>
+              </div>
+            </div>
+            <div className="w-full md:w-1/2 lg:w-1/3 px-2 my-2">
+              <div className="w-full border border-gray-300 rounded h-full flex flex-col items-center justify-center py-8 bg-white shadow-xl lift">
+                <img src="/c.jpg" alt="Avatar of admin" className="mb-6 rounded-full h-24 w-24" />
+                <div className="px-4 text-center">
+                  <p className="text-gray-700">Project Manager</p>
+                  <p className="text-gray-900 text-3xl mb-4">Blackrabbit</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </Container>
