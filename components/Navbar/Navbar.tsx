@@ -12,9 +12,10 @@ export default function Navbar({ landing }) {
   return (
     <header className="flex flex-wrap text-gray-700 py-4 lg:py-8 select-none">
       <div className="flex-1 flex justify-between items-center">
-        <a href="#" className={classNames({ "text-white": landing, "text-gray-900": !landing }, "text-2xl font-semibold tracking-tight")}>
-          PC Gaming Hub
-        </a>
+        <Link href="/">
+          <a className={classNames({ "text-white": landing, "text-gray-900": !landing }, "text-2xl font-semibold tracking-tight")}>PC Gaming Hub</a>
+        </Link>
+
         <span onClick={toggleNav} className="cursor-pointer lg:hidden block">
           <svg
             className={classNames({ "text-white": landing, "text-gray-900": !landing }, "fill-current")}
