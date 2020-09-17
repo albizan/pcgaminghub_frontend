@@ -6,6 +6,7 @@ import Container from "../layouts/Container";
 // Import components
 import FullpageLanding from "../components/FullpageLanding";
 import BuildsWrapper from "../components/BuildsWrapper";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
         </section>
         <BuildsWrapper />
       </Container>
+      <Footer />
     </>
   );
 }
