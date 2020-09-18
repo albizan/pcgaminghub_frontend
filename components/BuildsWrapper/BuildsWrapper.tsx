@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { http } from "../../utils/http";
 import BuildCard from "../BuildCard";
 import { BaseBuild } from "../../interfaces/BaseBuild.interface";
+import ReactSlider from "react-slider";
 
 const AMD = "AMD";
 const INTEL = "INTEL";
@@ -15,6 +16,7 @@ export default function BuildsWrapper() {
   let [gpus, setGpus] = useState([AMD, NVIDIA]);
   let [minPrice, setMinPrice] = useState(600);
   let [maxPrice, setMaxPrice] = useState(2500);
+  let [range, setRange] = useState([500, 3000]);
 
   function toggleCPUAMD() {
     if (cpus.includes(INTEL)) {
@@ -73,10 +75,10 @@ export default function BuildsWrapper() {
   // Apply filter when CPU, GPU, price is changed by user
   useEffect(() => {
     const newFilteredBuilds = baseBuilds.filter((build) => {
-      return cpus.includes(build.cpuBrand) && gpus.includes(build.gpuBrand) && minPrice <= build.price && build.price <= maxPrice;
+      return cpus.includes(build.cpuBrand) && gpus.includes(build.gpuBrand) && build.price > range[0] && build.price < range[1];
     });
     setFilteredBuilds(newFilteredBuilds);
-  }, [cpus, gpus, maxPrice, minPrice]);
+  }, [cpus, gpus, maxPrice, minPrice, range]);
 
   return (
     <div>
@@ -143,7 +145,7 @@ export default function BuildsWrapper() {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-around w-full mt-12 lg:mt-20">
+        <div className="flex flex-col lg:flex-row items-center justify-around w-full mt-12 lg:mt-20 md:hidden">
           <div className="flex flex-col">
             <span className="font-semibold mr-2">Prezzo minimo</span>
             <input
@@ -165,6 +167,22 @@ export default function BuildsWrapper() {
               step="50"
               min="650"
               className={`px-4 py-3 rounded border border-gray-300 focus:outline-none ${styles.input}`}
+            />
+          </div>
+        </div>
+
+        <div className="mt-20 w-full hidden md:block">
+          <p className="font-bold text-sm lg:text-lg text-center tracking-wide mb-4">Seleziona il range di prezzo</p>
+          <div className="flex">
+            <ReactSlider
+              min={500}
+              max={3000}
+              onAfterChange={(e) => setRange(e)}
+              className="horizontal-slider"
+              thumbClassName="example-thumb"
+              trackClassName="example-track"
+              defaultValue={range}
+              renderThumb={(props, state) => <div {...props}>{state.valueNow + "€"}</div>}
             />
           </div>
         </div>
