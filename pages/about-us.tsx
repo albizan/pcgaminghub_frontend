@@ -27,7 +27,7 @@ export default function AboutUs() {
           <div className="flex flex-col md:flex-row">
             <div className="flex-1 flex items-center justify-center md:justify-start">
               <h3 className="md:border-l-2 md:pl-10 border-black md:w-80 mb-12 md:mb-0 text-center md:text-left text-black text-3xl leading-none tracking-tight">
-                <div className="text-5xl leading-none m-0 p-0 hidden md:block">"</div>Un pc deve adattarsi al suo possessore, non l'incontrario
+                <div className="text-5xl leading-none m-0 p-0 hidden md:block">"</div>Un pc deve adattarsi al suo possessore, non il contrario
               </h3>
             </div>
             <div className="flex-1 text-gray-700 text-base text-justify">
