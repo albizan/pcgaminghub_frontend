@@ -84,7 +84,7 @@ export default function BuildsWrapper() {
     <div>
       <section className="text-sm md:text-lg mt-6 md:mt-12 text-center md:text-left">
         <div className="flex justify-center">
-          <h1 className="mt-12 mb-4 inline-block text-5xl border-b-4 border-indigo-500 leading-tight text-center">Le nostre configurazioni</h1>
+          <h1 className="mt-12 mb-4 inline-block text-2xl lg:text-4xl md:border-b-4 border-indigo-500 leading-tight text-center">Le nostre configurazioni</h1>
         </div>
         <div className="text-gray-700 md:text-xl">
           <p>

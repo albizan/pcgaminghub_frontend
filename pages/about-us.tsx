@@ -14,7 +14,7 @@ export default function AboutUs() {
         <Navbar landing={false} />
         <section>
           <div className="flex justify-center">
-            <h1 className="mt-12 mb-4 inline-block text-5xl border-b-4 border-indigo-500 leading-tight text-center">Chi Siamo</h1>
+            <h1 className="mt-12 mb-4 inline-block text-2xl lg:text-4xl md:border-b-4 border-indigo-500 leading-tight text-center">Chi Siamo</h1>
           </div>
           <p className="text-gray-700 text-center md:text-xl">
             PC Gaming Hub nasce dall’idea di voler rendere semplice e alla portata di tutti l’assemblaggio di un computer.

@@ -19,7 +19,7 @@ export default function Home() {
       <Container>
         <section className="text-sm md:text-lg text-center md:text-left">
           <div className="flex justify-center">
-            <h1 className="mt-12 mb-4 inline-block text-5xl border-b-4 border-indigo-500 leading-tight text-center">Benvenuto!</h1>
+            <h1 className="mt-12 mb-4 inline-block text-2xl lg:text-4xl md:border-b-4 border-indigo-500 leading-tight text-center">Benvenuto!</h1>
           </div>
           <div className="text-gray-700 md:text-xl">
             <p>PC Gaming Hub nasce dall’idea di voler rendere semplice e alla portata di tutti l’assemblaggio di un computer.</p>
