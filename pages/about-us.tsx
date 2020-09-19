@@ -8,6 +8,7 @@ export default function AboutUs() {
     <>
       <Head>
         <title>Chi Siamo</title>
+        <meta name="description" content="Scopri chi siamo e qual è la nostra mission" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container>

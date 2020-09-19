@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { http } from "../../utils/http";
 import { createCartUrl } from "../../utils/amazon";
@@ -41,6 +42,11 @@ export default function BuildPage() {
     const total: number = completeBuild.items.reduce((total, item) => (total += item.price), 0);
     return (
       <>
+        <Head>
+          <title>Chi Siamo</title>
+          <meta name="description" content="Scopri chi siamo e qual è la nostra mission" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
         <section className="container mx-auto px-4 md:px-8">
           <Link href="/">
             <a className="mt-12 block text-indigo-500 text-sm md:text-lg font-thin tracking-tight">{"< "}Torna alla home</a>
