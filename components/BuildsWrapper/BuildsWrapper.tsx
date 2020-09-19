@@ -145,7 +145,7 @@ export default function BuildsWrapper() {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-around w-full mt-12 lg:mt-20 md:hidden">
+        {/* <div className="flex flex-col lg:flex-row items-center justify-around w-full mt-12 lg:mt-20 md:hidden">
           <div className="flex flex-col">
             <span className="font-semibold mr-2">Prezzo minimo</span>
             <input
@@ -169,9 +169,9 @@ export default function BuildsWrapper() {
               className={`px-4 py-3 rounded border border-gray-300 focus:outline-none ${styles.input}`}
             />
           </div>
-        </div>
+        </div> */}
 
-        <div className="mt-20 w-full hidden md:block">
+        <div className="mt-20 w-full">
           <p className="font-bold text-sm lg:text-lg text-center tracking-wide mb-4">Seleziona il range di prezzo</p>
           <div className="flex">
             <ReactSlider
@@ -179,8 +179,8 @@ export default function BuildsWrapper() {
               max={3000}
               onAfterChange={(e) => setRange(e)}
               className="horizontal-slider"
-              thumbClassName="example-thumb"
-              trackClassName="example-track"
+              thumbClassName="example-thumb text-xs"
+              trackClassName="example-track h-2 md:h-4"
               defaultValue={range}
               renderThumb={(props, state) => <div {...props}>{state.valueNow + "€"}</div>}
             />
