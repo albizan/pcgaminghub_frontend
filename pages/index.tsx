@@ -13,6 +13,7 @@ export default function Home() {
     <>
       <Head>
         <title>PC Gaming Hub</title>
+        <meta name="description" content="Scegliamo per te le migliori configurazioni per computer desktop da gaming, ufficio e produttività" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <FullpageLanding />
