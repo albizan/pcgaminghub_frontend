@@ -93,7 +93,7 @@ export default function BuildsWrapper() {
           </p>
           <p>
             Per qualunque dubbio, curiosità o semplicemente perchè ti piace parlare di componenti hardware sappi che sei benvenuto nel gruppo telegram{" "}
-            <a className="text-indigo-600 font-semibold" href="https://t.me/pcbuildingitaly" target="_blank" rel="noopener">
+            <a className="text-indigo-600 font-semibold tracking-tight" href="https://t.me/pcbuildingitaly" target="_blank" rel="noopener">
               PC Building Italia
             </a>
           </p>
