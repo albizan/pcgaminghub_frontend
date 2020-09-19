@@ -19,7 +19,7 @@ export default function BuildRow(props) {
           <a href={component.url}>{component.label}</a>
         </p>
         <span className="text-indigo-400 tracking-tight leading-none">
-          <a target="_blank" href={component.url}>
+          <a target="_blank" rel="noopener" href={component.url}>
             Guarda su amazon.it
           </a>
         </span>

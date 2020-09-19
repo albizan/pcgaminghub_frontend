@@ -69,6 +69,7 @@ export default function Navbar({ landing }) {
                   "inline-block lg:ml-6 rounded-lg px-3 py-2",
                 )}
                 target="_blank"
+                rel="noopener"
                 href="https://t.me/pcbuildingitaly"
               >
                 Telegram

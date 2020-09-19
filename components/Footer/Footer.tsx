@@ -8,7 +8,7 @@ export default function Footer() {
         <p className="text-white text-lg md:text-xl">&copy; {new Date().getFullYear()} pcgaming.it - All right reserved </p>
         <IconContext.Provider value={{ color: "white", size: "2.4rem" }}>
           <div className="icons flex justify-center mt-4">
-            <a target="_blank" href="https://t.me/pcbuildingitaly">
+            <a target="_blank" rel="noopener" href="https://t.me/pcbuildingitaly">
               <FaTelegram />
             </a>
           </div>
