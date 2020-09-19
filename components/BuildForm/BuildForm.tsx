@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { getAccessToken } from "../../utils/auth";
 import FormErrors from "./FormErrors";
 import { parseErrors } from "../../utils/form";
+import { extractAsinFromUrl } from "../../utils/amazon";
 
 export default function BuildForm({ defaultValues, buildId }) {
   useEffect(() => {
@@ -20,6 +21,14 @@ export default function BuildForm({ defaultValues, buildId }) {
   const { register, handleSubmit } = useForm({ mode: "onSubmit", defaultValues: defaultValues || {} });
 
   async function onSubmit(formData) {
+    // Get only components
+    const keys = Object.keys(formData).filter((key) => formData[key].asin);
+    keys.forEach((key) => {
+      if (formData[key].asin) {
+        formData[key].asin = extractAsinFromUrl(formData[key].asin);
+      }
+    });
+    console.info(formData);
     try {
       let result = buildId ? await http.put(`/build/${buildId}`, formData) : await http.post("/build/new", formData);
       if (result.status) {
