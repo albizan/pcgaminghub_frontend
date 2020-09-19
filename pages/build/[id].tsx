@@ -74,7 +74,7 @@ export default function BuildPage() {
 
           <div className="flex lg:mt-16 text-xl md:text-2xl font-semibold text-gray-800">
             <p className="flex-1 text-left text-indigo-600">
-              <a target="_blank" href={createCartUrl(completeBuild, "wasabe-21")}>
+              <a target="_blank" rel="noopener" href={createCartUrl(completeBuild, "wasabe-21")}>
                 Aggiungi tutto al Carrello Amazon
               </a>
             </p>
@@ -89,7 +89,7 @@ export default function BuildPage() {
             <h3 className="mb-4 inline-block text-3xl font-semibold border-b-4 border-indigo-500 leading-tight">Non sai assemblare?</h3>
             <p>
               Se hai problemi o non sai come assemblare un computer puoi rivolgerti a Luigi e Lorenzo di{" "}
-              <a className="text-indigo-500" href="#">
+              <a href="mailto: lltechconfigurazioni@gmail.com" className="text-indigo-500">
                 LL-Tech
               </a>
             </p>
