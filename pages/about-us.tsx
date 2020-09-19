@@ -51,7 +51,7 @@ export default function AboutUs() {
           <div className="flex flex-wrap">
             <div className="w-full md:w-1/2 lg:w-1/3 px-2 my-2">
               <div className="w-full border border-gray-300 rounded h-full flex flex-col items-center justify-center py-8 bg-white shadow-xl lift">
-                <img src="https://placekitten.com/360/360" alt="Avatar of admin" className="mb-6 rounded-full h-24 w-24" />
+                <img src="https://placekitten.com/180/180" alt="Avatar of admin" className="mb-6 rounded-full h-24 w-24" />
                 <div className="px-4 text-center">
                   <p className="text-gray-700">Founder/CEO</p>
                   <p className="text-gray-900 text-3xl mb-4">Blackrabbit</p>
