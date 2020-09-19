@@ -43,8 +43,8 @@ export default function BuildPage() {
     return (
       <>
         <Head>
-          <title>Chi Siamo</title>
-          <meta name="description" content="Scopri chi siamo e qual è la nostra mission" />
+          <title>La nostra configurazione</title>
+          <meta name="description" content="Configurazione Computer Desktop" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <section className="container mx-auto px-4 md:px-8">
