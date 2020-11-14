@@ -16,7 +16,7 @@ export default function BuildsWrapper() {
   let [gpus, setGpus] = useState([AMD, NVIDIA]);
   let [minPrice, setMinPrice] = useState(600);
   let [maxPrice, setMaxPrice] = useState(2500);
-  let [range, setRange] = useState([500, 3000]);
+  let [range, setRange] = useState([400, 5000]);
 
   function toggleCPUAMD() {
     if (cpus.includes(INTEL)) {
@@ -175,8 +175,8 @@ export default function BuildsWrapper() {
           <p className="font-bold text-sm lg:text-lg text-center tracking-wide mb-4">Seleziona il range di prezzo</p>
           <div className="flex">
             <ReactSlider
-              min={500}
-              max={10000}
+              min={400}
+              max={5000}
               onAfterChange={(e) => setRange(e)}
               className="horizontal-slider"
               thumbClassName="example-thumb text-xs"
