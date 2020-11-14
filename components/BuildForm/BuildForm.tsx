@@ -41,7 +41,7 @@ export default function BuildForm({ defaultValues, buildId }) {
         setErrors(parseErrors(errorDetails));
         setErrorMessage("Errore, verifica i dati inseriti");
       } else {
-        setErrorMessage("Si è verificato un errore imprevisto");
+        setErrorMessage(`Si è verificato un errore imprevisto (${error.response.status})`);
       }
     }
   }
