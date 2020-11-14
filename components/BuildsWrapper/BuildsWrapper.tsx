@@ -176,7 +176,7 @@ export default function BuildsWrapper() {
           <div className="flex">
             <ReactSlider
               min={500}
-              max={3000}
+              max={10000}
               onAfterChange={(e) => setRange(e)}
               className="horizontal-slider"
               thumbClassName="example-thumb text-xs"
