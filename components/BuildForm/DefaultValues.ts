@@ -15,8 +15,6 @@ export default class DefaultValues {
   "Scheda Madre": Component;
 
   setComponent(key: string, component: Component) {
-    console.log(component);
-    console.info(`Set ${key} to ${component}`);
     if (typeof (this[key] === "Component")) this[key] = component;
   }
 
