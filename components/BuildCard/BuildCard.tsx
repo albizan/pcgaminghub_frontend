@@ -11,7 +11,7 @@ export default function BuildCard(props) {
       <div className={`rounded-lg p-8 bg-indigo-400 text-white ${styles.lift} ${styles.cardBackground}`}>
         <div className="badges flex justify-end mb-4 text-xs uppercase text-indigo-600 font-black">
           <span className="rounded-full px-3 py-1 bg-white  mr-2">{cpuBrand}</span>
-          <span className="rounded-full px-3 py-1 bg-white">{gpuBrand}</span>
+          {gpuBrand || <span className="rounded-full px-3 py-1 bg-white">{gpuBrand}</span>}
         </div>
         <div className="header flex">
           <div className="image w-24 h-24 rounded-lg overflow-hidden border-4 border-gray-200">
@@ -40,7 +40,7 @@ export default function BuildCard(props) {
               <img src="/gpu.svg" alt="GPU Logo" className="logo" />
             </div>
             <div className="ml-6">
-              <p className="text-sm text-gray-200">{gpuLabel}</p>
+              <p className="text-sm text-gray-200">{gpuLabel || "Integrata"}</p>
             </div>
           </div>
         </div>
