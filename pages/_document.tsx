@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Html, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -9,9 +9,6 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="it">
-        <Head>
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        </Head>
         <body>
           <Main />
           <NextScript />
