@@ -102,13 +102,13 @@ export default function BuildsWrapper() {
       <div className="mt-12 bg-white shadow-xl mb-20 py-12 px-4 lg:px-16 py-8">
         <div className="flex flex-col lg:flex-row">
           <div className="w-full lg:flex-1">
-            <p className="font-bold text-sm lg:text-lg text-center tracking-wide mb-4">Seleziona il brand del processore</p>
+            <p className="font-bold text-sm lg:text-lg text-center tracking-wide mb-4">Filtra il brand del processore</p>
             <div className="flex justify-center">
               <button
                 onClick={toggleCPUAMD}
                 className={`${
                   cpus.includes(AMD) && styles.active
-                } px-6 py-2 rounded border-2 border-indigo-600 text-indigo-600 font-semibold text-gray-600 w-32 uppercase focus:outline-none`}
+                } px-6 py-2 rounded border-2 border-indigo-200 text-indigo-200 font-semibold text-gray-600 w-32 uppercase focus:outline-none`}
               >
                 AMD
               </button>
@@ -116,20 +116,20 @@ export default function BuildsWrapper() {
                 onClick={toggleCPUIntel}
                 className={`${
                   cpus.includes(INTEL) && styles.active
-                } px-6 py-2 rounded border-2 border-indigo-600 text-indigo-600 font-semibold text-gray-600 w-32 uppercase focus:outline-none ml-6`}
+                } px-6 py-2 rounded border-2 border-indigo-200 text-indigo-200 font-semibold text-gray-600 w-32 uppercase focus:outline-none ml-6`}
               >
                 INTEL
               </button>
             </div>
           </div>
           <div className="w-full mt-10 lg:mt-0 lg:flex-1">
-            <p className="font-bold text-sm lg:text-lg text-center tracking-wide mb-4">Seleziona il brand della scheda video</p>
+            <p className="font-bold text-sm lg:text-lg text-center tracking-wide mb-4">Filtra il brand della scheda video</p>
             <div className="flex justify-center">
               <button
                 onClick={toggleGPUAMD}
                 className={`${
                   gpus.includes(AMD) && styles.active
-                } px-6 py-2 rounded border-2 border-indigo-600 text-indigo-600 font-semibold text-gray-600 w-32 uppercase focus:outline-none`}
+                } px-6 py-2 rounded border-2 border-indigo-200 text-indigo-200 font-semibold text-gray-600 w-32 uppercase focus:outline-none`}
               >
                 AMD
               </button>
@@ -137,7 +137,7 @@ export default function BuildsWrapper() {
                 onClick={toggleGPUNvidia}
                 className={`${
                   gpus.includes(NVIDIA) && styles.active
-                } px-6 py-2 rounded border-2 border-indigo-600 text-indigo-600 font-semibold text-gray-600 w-32 uppercase focus:outline-none ml-6`}
+                } px-6 py-2 rounded border-2 border-indigo-200 text-indigo-200 font-semibold text-gray-600 w-32 uppercase focus:outline-none ml-6`}
               >
                 NVIDIA
               </button>
@@ -172,11 +172,12 @@ export default function BuildsWrapper() {
         </div> */}
 
         <div className="mt-20 w-full">
-          <p className="font-bold text-sm lg:text-lg text-center tracking-wide mb-4">Seleziona il range di prezzo</p>
+          <p className="font-bold text-sm lg:text-lg text-center tracking-wide mb-8">Seleziona il range di prezzo</p>
           <div className="flex">
             <ReactSlider
               min={400}
               max={5000}
+              step={100}
               onAfterChange={(e) => setRange(e)}
               className="horizontal-slider"
               thumbClassName="example-thumb text-xs"
