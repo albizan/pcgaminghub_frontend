@@ -62,7 +62,9 @@ export default function BuildsWrapper() {
   useEffect(() => {
     async function retrieveBaseBuilds() {
       try {
-        const { data } = await http.get("/build/base");
+        const response = await http.get("/build/base");
+        const data: BaseBuild[] = response.data;
+        data.sort((b1,b2) => b1.price - b2.price);
         setBaseBuilds(data);
         setFilteredBuilds(data);
       } catch (error) {
