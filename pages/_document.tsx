@@ -12,9 +12,8 @@ class MyDocument extends Document {
       <Html lang="it">
         <Head>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        </Head>
-        {/* Global Site Tag (gtag.js) - Google Analytics */}
-        <script
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
           />
@@ -30,6 +29,7 @@ class MyDocument extends Document {
           `
             }}
           />
+        </Head>
         <body>
           <Main />
           <NextScript />
