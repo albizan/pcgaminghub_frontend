@@ -75,7 +75,7 @@ export default function BuildsWrapper() {
   // Apply filter when CPU, GPU, price is changed by user
   useEffect(() => {
     const newFilteredBuilds = baseBuilds.filter((build) => {
-      return cpus.includes(build.cpuBrand) && (gpus.includes(build.gpuBrand) || !build.gpuBrand) && build.price > range[0] && build.price < range[1];
+      return cpus.includes(build.cpuBrand) && (gpus.includes(build.gpuBrand) || !build.gpuBrand) && build.price >= range[0] && build.price <= range[1];
     });
     setFilteredBuilds(newFilteredBuilds);
   }, [cpus, gpus, maxPrice, minPrice, range]);
