@@ -46,7 +46,7 @@ export default function BuildCard(props) {
         </div>
 
         <div className="show-more-btn flex justify-center mt-12">
-          <Link href={`/build/${id}`}>
+          <Link href={`/build/${name}`}>
             <a className={`inline-block focus:outline-none bg-white px-8 py-3 uppercase font-semibold text-indigo-500 rounded-full`}>Mostra Tutto {">"}</a>
           </Link>
         </div>
