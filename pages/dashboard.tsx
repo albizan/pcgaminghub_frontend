@@ -53,7 +53,7 @@ export default function Dashboard(props) {
                     {baseBuild.name} - {baseBuild.price}€
                   </h3>
                   <div className="flex justify-center md:justify-end mt-6 md:mt-0 text-xs font-semibold">
-                    <Link href={`/build/${baseBuild.id}`}>
+                    <Link href={`/build/${baseBuild.name}`}>
                       <button className="border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white rounded mx-1 w-20">Visualizza</button>
                     </Link>
                     <button onClick={() => openDeleteModal(baseBuild)} className="border border-red-600 text-red-600 hover:bg-red-600 hover:text-white rounded mx-1 w-20">
