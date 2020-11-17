@@ -60,7 +60,7 @@ export default function Dashboard(props) {
                       Elimina
                     </button>
                     <button
-                      onClick={() => router.push(`/build/edit/${baseBuild.id}`)}
+                      onClick={() => router.push(`/build/edit/${baseBuild.name}`)}
                       className="border border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:text-white rounded mx-1 w-20"
                     >
                       Modifica
