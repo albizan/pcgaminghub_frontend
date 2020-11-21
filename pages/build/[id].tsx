@@ -39,7 +39,10 @@ export default function BuildPage() {
   }
 
   if (completeBuild) {
-    const total: number = completeBuild.items.reduce((total, item) => (total += item.price), 0);
+    const total: number = completeBuild.items.reduce((total, item) => {
+      const price = item.price || item.suggestedPrice;
+      return total += price;
+    }, 0);
     return (
       <>
         <Head>
