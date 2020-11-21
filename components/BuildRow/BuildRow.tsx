@@ -2,8 +2,12 @@ import { Item } from "../../interfaces/Item.interface";
 
 export default function BuildRow(props) {
   const showPrice = (component) => {
-    if(component.price) return `${component.price} €`;
-    if(component.suggestedPrice) return `${component.suggestedPrice} €`;
+    if(component.price) {
+      return <p className="text-sm md:text-lg font-semibold">{component.price} €</p>;
+    }
+    if(component.suggestedPrice) {
+      return <p className="text-sm md:text-lg font-semibold text-indigo-500">* {component.suggestedPrice} €</p>;
+    } 
     return "N/A";
   }
   let component: Item = props.component;

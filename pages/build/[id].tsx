@@ -93,6 +93,7 @@ export default function BuildPage() {
           {completeBuild.items.map((item) => (
             <BuildRow key={item.asin} component={item} />
           ))}
+          <p className="text-xl text-indigo-600">* I prezzi in viola sono prezzi consigliati, vengono mostrati quando il il prodotto non è momentaneamente disponibile</p>
 
           <div className="text-gray-900 my-12 md:text-lg leading-relaxed">
             <h3 className="mb-4 inline-block text-3xl font-semibold border-b-4 border-indigo-500 leading-tight">Non sai assemblare?</h3>
