@@ -9,6 +9,7 @@ export interface Item {
   watched: boolean;
   time: string;
   price: number;
+  suggestedPrice: number;
   warehousePrice: number;
   average: number;
   warehouseAverage: number;

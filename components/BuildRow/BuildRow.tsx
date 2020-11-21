@@ -1,6 +1,11 @@
 import { Item } from "../../interfaces/Item.interface";
 
 export default function BuildRow(props) {
+  const showPrice = (component) => {
+    if(component.price) return `${component.price} €`;
+    if(component.suggestedPrice) return `${component.suggestedPrice} €`;
+    return "N/A";
+  }
   let component: Item = props.component;
   return (
     <div className="text-gray-700 text-xs sm:text-sm md:text-lg bg-white rounded border border-gray-400 shadow-lg flex my-6 py-6 items-center pl-6 sm:pl-2 pr-6 h-24 lg:h-32">
@@ -25,7 +30,7 @@ export default function BuildRow(props) {
         </span>
       </div>
       <div className="text-right">
-        <p className="text-sm md:text-lg font-semibold">{component.price ? `${component.price} €` : "N/A"}</p>
+        <p className="text-sm md:text-lg font-semibold">{showPrice(component)}</p>
         <p className="text-sm text-gray-500 tracking-tight leading-none hidden md:block">ultimo controllo: {component.time}</p>
       </div>
     </div>
